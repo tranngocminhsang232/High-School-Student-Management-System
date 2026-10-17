@@ -1,11 +1,17 @@
-# High School Student Management System
+High School Student Management System
+1. Giới thiệu
+Hệ thống Quản lý Học sinh THPT hỗ trợ quản lý hồ sơ học sinh, phân lớp, phân công giáo viên, quản lý điểm số, chuyên cần, hạnh kiểm, báo cáo thống kê và thông báo dành cho phụ huynh.
 
-Hệ thống Quản lý Học sinh THPT hỗ trợ quản lý hồ sơ, phân lớp, phân công giáo viên, điểm, chuyên cần, hạnh kiểm, báo cáo và thông báo cho phụ huynh.
+2. Thành viên nhóm
+Thành viên 1:52400253 Đặng Minh Tuấn
+Thành viên 2:52400081 Nguyễn Hoàng Minh
+Thành viên 3:52400    Trần Ngọc Minh Sang
+3. Công nghệ sử dụng
+Frontend:CSS,HTML,JS
+Backend:PHP, React,NodeJS
+Database:MySQL
 
-Repository được tổ chức theo cấu trúc Bài 1 của Lab07. Tài liệu thiết kế được chia theo kiến trúc, cơ sở dữ liệu và giao diện để các thành viên sử dụng khi xây dựng mã nguồn.
-
-## Cấu trúc thư mục
-
+4. Cấu trúc dự án
 ```text
 High-School-Student-Management-System/
 ├── README.md
@@ -27,23 +33,19 @@ High-School-Student-Management-System/
 └── frontend/
     └── .gitkeep
 ```
+docs/: Tài liệu thiết kế hệ thống, cơ sở dữ liệu và giao diện.
+backend/: Mã nguồn phía máy chủ.
+frontend/: Mã nguồn giao diện người dùng.
+5. Hướng dẫn cài đặt
+git clone https://github.com/<username>/High-School-Student-Management-System.git
+cd High-School-Student-Management-System
+6. Hướng dẫn chạy
+Bổ sung lệnh chạy Frontend, Backend và Database sau khi hoàn thành triển khai.
 
-## Tài liệu thiết kế
+7. Kiểm thử
 
-| Tài liệu | Nội dung |
-| --- | --- |
-| [Thiết kế kiến trúc](docs/architecture.md) | Kiến trúc 3 lớp, trách nhiệm thành phần, luồng tiếp nhận và nhập điểm. |
-| [Thiết kế cơ sở dữ liệu](docs/database-design.md) | ERD 14 bảng, mô tả trường, Data Dictionary và quan hệ dữ liệu. |
-| [Thiết kế giao diện](docs/ui-design.md) | Vai trò, màn hình, wireframe, đầu vào và phản hồi của hệ thống. |
-| [Schema PostgreSQL](docs/database/schema.sql) | Câu lệnh tạo 14 bảng, khóa, ràng buộc và chỉ mục. |
-| [Ràng buộc và tham số](docs/database/constraints-and-rules.md) | Kiểm tra nghiệp vụ, cấu trúc quy định, giao dịch và cách tính kết quả. |
-| [Lab06 PDF](docs/reference/Lab06.pdf) · [Lab06 Word](docs/reference/Lab06.docx) | Hai định dạng của bản thiết kế gốc. |
-| [ERD A4](docs/reference/ERD_14_bang_A4.pdf) | Sơ đồ 14 bảng dùng ký hiệu số, trên một trang A4. |
+# Chạy test
+...
 
-## Phạm vi triển khai
-
-Năm nhóm người dùng gồm Ban giám hiệu, Giáo viên chủ nhiệm, Giáo viên bộ môn, Phụ huynh và Quản trị viên. Một giáo viên có thể đồng thời giữ nhiệm vụ chủ nhiệm và giảng dạy bộ môn; quyền được kiểm tra theo phân công.
-
-Thiết kế dữ liệu sử dụng PostgreSQL với 14 bảng. Các quy định tuổi, sĩ số, hệ số điểm và chuẩn đánh giá được quản lý bằng tham số.
-
-`backend/` dành cho mã nguồn máy chủ; `frontend/` dành cho mã nguồn giao diện. Hai tệp `.gitkeep` giúp Git lưu các thư mục khi chưa có mã nguồn. Khung ứng dụng và hướng dẫn cài đặt, chạy chương trình sẽ được bổ sung khi thực hiện Bài 3.
+# Coverage
+...
