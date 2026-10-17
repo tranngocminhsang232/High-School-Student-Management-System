@@ -1,0 +1,26 @@
+# Environment configuration
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Local dependencies and generated output
+node_modules/
+target/
+dist/
+build/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+coverage/
+*.log
+
+# Editor and operating system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+Desktop.ini
+~$*
+*.tmp
