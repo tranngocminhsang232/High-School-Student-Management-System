@@ -39,10 +39,20 @@ High-School-Student-Management-System/
 │       │   ├── Application.java
 │       │   ├── config/
 │       │   ├── controller/
+│       │   │   ├── ClassAssignmentController.java
+│       │   │   ├── ClassroomController.java
+│       │   │   └── StudentController.java
 │       │   ├── dto/
+│       │   │   ├── CreateStudentRequest.java
+│       │   │   └── UpdateStudentRequest.java
 │       │   ├── model/
+│       │   │   ├── Classroom.java
+│       │   │   └── Student.java
 │       │   ├── repository/
+│       │   │   └── Studentrepository.java
 │       │   └── service/
+│       │       ├── ClassAssignmentService.java
+│       │       └── StudentService.java
 │       └── main/resources/
 │           └── application.properties
 └── frontend/                    # Khung mã nguồn giao diện
@@ -51,11 +61,20 @@ High-School-Student-Management-System/
         ├── App.jsx
         ├── main.jsx
         ├── components/
+        │   ├── ClassroomForm.jsx
+        │   ├── ClassroomTable.jsx
+        │   ├── StudentForm.jsx
+        │   └── StudentTable.jsx
         ├── services/
-        │   └── api.js
+        │   ├── api.js
+        │   ├── classroomService.js
+        │   └── studentService.js
         └── pages/
             ├── Login.jsx
-            └── StudentManagement.jsx
+            ├── StudentManagement.jsx
+            ├── StudentDetail.jsx
+            ├── ClassroomManagement.jsx
+            └── ClassAssignment.jsx
 ```
 
 ## 5. Quy trình làm việc với Git Flow
