@@ -24,3 +24,7 @@ Thumbs.db
 Desktop.ini
 ~$*
 *.tmp
+
+# Assignment files
+Lab07*.pdf
+

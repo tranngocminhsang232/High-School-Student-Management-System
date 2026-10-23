@@ -1,49 +1,112 @@
 # High School Student Management System
 
-Hệ thống Quản lý Học sinh THPT hỗ trợ quản lý hồ sơ, phân lớp, phân công giáo viên, điểm, chuyên cần, hạnh kiểm, báo cáo và thông báo cho phụ huynh.
+## 1. Giới thiệu
+Hệ thống Quản lý Học sinh THPT hỗ trợ số hóa và quản lý tập trung các quy trình: quản lý hồ sơ học sinh, phân lớp, phân công giáo viên, quản lý điểm số, chuyên cần, hạnh kiểm, báo cáo thống kê và thông báo dành cho phụ huynh.
 
-Repository được tổ chức theo cấu trúc Bài 1 của Lab07. Tài liệu thiết kế được chia theo kiến trúc, cơ sở dữ liệu và giao diện để các thành viên sử dụng khi xây dựng mã nguồn.
+## 2. Thành viên nhóm
+| STT | Họ và tên | Vai trò / Nhiệm vụ phụ trách | Nhánh Git phụ trách |
+| :---: | :--- | :--- | :--- |
+| 1 | **Trần Ngọc Minh Sang** | Thiết kế CSDL & Xác thực | `develop`, `feature/auth-login` |
+| 2 | **Đặng Minh Tuấn** | Tiếp nhận & Quản lý hồ sơ học sinh, Xếp lớp | `feature/student-management` |
+| 3 | **Nguyễn Hoàng Minh** | Quản lý điểm số môn học & Báo cáo thống kê | `feature/grade-entry` |
 
-## Cấu trúc thư mục
+## 3. Công nghệ sử dụng
+- **Frontend**: HTML5, CSS3, JavaScript, React
+- **Backend**: NodeJS, PHP, Spring Boot
+- **Database**: MySQL / PostgreSQL
 
+## 4. Cấu trúc dự án
 ```text
 High-School-Student-Management-System/
 ├── README.md
 ├── .gitignore
 ├── docs/
-│   ├── architecture.md
-│   ├── database-design.md
-│   ├── ui-design.md
-│   ├── assets/                  # Sơ đồ, wireframe và ERD dạng SVG
+│   ├── architecture.md          # Thiết kế kiến trúc hệ thống 3 lớp
+│   ├── database-design.md       # Thiết kế cơ sở dữ liệu (ERD 14 bảng, Data Dictionary)
+│   ├── ui-design.md             # Thiết kế giao diện (UI Specs & Wireframes)
+│   ├── assets/                  # Sơ đồ kiến trúc, wireframe và ERD dạng SVG/PNG
 │   ├── database/
-│   │   ├── schema.sql
+│   │   ├── schema.sql           # Script khởi tạo cơ sở dữ liệu
 │   │   └── constraints-and-rules.md
 │   └── reference/
 │       ├── Lab06.docx
 │       ├── Lab06.pdf
 │       └── ERD_14_bang_A4.pdf
-├── backend/
-│   └── .gitkeep
-└── frontend/
-    └── .gitkeep
+├── backend/                     # Khung mã nguồn máy chủ
+│   ├── pom.xml
+│   └── src/
+│       ├── main/java/com/highschool/
+│       │   ├── Application.java
+│       │   ├── config/
+│       │   ├── controller/
+│       │   ├── dto/
+│       │   ├── model/
+│       │   ├── repository/
+│       │   └── service/
+│       └── main/resources/
+│           └── application.properties
+└── frontend/                    # Khung mã nguồn giao diện
+    ├── package.json
+    └── src/
+        ├── App.jsx
+        ├── main.jsx
+        ├── components/
+        ├── services/
+        │   └── api.js
+        └── pages/
+            ├── Login.jsx
+            ├── StudentManagement.jsx
+            └── GradeEntry.jsx
 ```
 
-## Tài liệu thiết kế
+## 5. Quy trình làm việc với Git Flow
 
-| Tài liệu | Nội dung |
-| --- | --- |
-| [Thiết kế kiến trúc](docs/architecture.md) | Kiến trúc 3 lớp, trách nhiệm thành phần, luồng tiếp nhận và nhập điểm. |
-| [Thiết kế cơ sở dữ liệu](docs/database-design.md) | ERD 14 bảng, mô tả trường, Data Dictionary và quan hệ dữ liệu. |
-| [Thiết kế giao diện](docs/ui-design.md) | Vai trò, màn hình, wireframe, đầu vào và phản hồi của hệ thống. |
-| [Schema PostgreSQL](docs/database/schema.sql) | Câu lệnh tạo 14 bảng, khóa, ràng buộc và chỉ mục. |
-| [Ràng buộc và tham số](docs/database/constraints-and-rules.md) | Kiểm tra nghiệp vụ, cấu trúc quy định, giao dịch và cách tính kết quả. |
-| [Lab06 PDF](docs/reference/Lab06.pdf) · [Lab06 Word](docs/reference/Lab06.docx) | Hai định dạng của bản thiết kế gốc. |
-| [ERD A4](docs/reference/ERD_14_bang_A4.pdf) | Sơ đồ 14 bảng dùng ký hiệu số, trên một trang A4. |
+Dự án áp dụng mô hình **Git Flow** nhằm chuẩn hóa quy trình phát triển và kiểm soát mã nguồn nhóm:
 
-## Phạm vi triển khai
+```mermaid
+gitGraph
+   commit id: "Khởi tạo repo"
+   branch develop
+   checkout develop
+   commit id: "Cấu trúc khung"
+   branch feature/student-management
+   checkout feature/student-management
+   commit id: "Hồ sơ học sinh"
+   checkout develop
+   branch feature/grade-entry
+   checkout feature/grade-entry
+   commit id: "Nhập điểm môn học"
+   checkout develop
+   merge feature/student-management id: "PR #1 Merge"
+   merge feature/grade-entry id: "PR #2 Merge"
+   checkout main
+   merge develop id: "Release v1.0"
+```
 
-Năm nhóm người dùng gồm Ban giám hiệu, Giáo viên chủ nhiệm, Giáo viên bộ môn, Phụ huynh và Quản trị viên. Một giáo viên có thể đồng thời giữ nhiệm vụ chủ nhiệm và giảng dạy bộ môn; quyền được kiểm tra theo phân công.
+### 5.1. Quy ước phân nhánh
+- **`main`**: Nhánh chứa phiên bản ổn định, sẵn sàng phát hành. Tuyệt đối không commit trực tiếp trên nhánh này.
+- **`develop`**: Nhánh tích hợp chính cho toàn bộ tính năng đang trong quá trình phát triển của cả nhóm.
+- **`feature/*`**: Các nhánh tính năng riêng biệt của từng thành viên, được tạo từ `develop`.
 
-Thiết kế dữ liệu sử dụng PostgreSQL với 14 bảng. Các quy định tuổi, sĩ số, hệ số điểm và chuẩn đánh giá được quản lý bằng tham số.
-
-`backend/` dành cho mã nguồn máy chủ; `frontend/` dành cho mã nguồn giao diện. Hai tệp `.gitkeep` giúp Git lưu các thư mục khi chưa có mã nguồn. Khung ứng dụng và hướng dẫn cài đặt, chạy chương trình sẽ được bổ sung khi thực hiện Bài 3.
+### 5.2. Quy trình đóng góp mã nguồn (Pull Request & Code Review)
+1. Cập nhật nhánh `develop` trước khi bắt đầu công việc:
+   ```bash
+   git switch develop
+   git pull origin develop
+   ```
+2. Tạo nhánh tính năng mới theo nhiệm vụ được giao:
+   ```bash
+   git switch -c feature/<ten-tinh-nang>
+   ```
+3. Lập trình và tạo commit với thông điệp rõ ràng:
+   ```bash
+   git add .
+   git commit -m "Add student management skeleton"
+   ```
+4. Đẩy nhánh lên GitHub:
+   ```bash
+   git push -u origin feature/<ten-tinh-nang>
+   ```
+5. Mở **Pull Request (PR)** từ `feature/<ten-tinh-nang>` vào nhánh `develop` trên GitHub.
+6. Thành viên khác tiến hành **Code Review**, để lại nhận xét và phê duyệt (Approve).
+7. Hợp nhất (**Merge**) Pull Request vào `develop`.
