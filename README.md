@@ -8,7 +8,7 @@ Hệ thống Quản lý Học sinh THPT hỗ trợ số hóa và quản lý tậ
 | :---: | :--- | :--- | :--- |
 | 1 | **Trần Ngọc Minh Sang** | Thiết kế CSDL & Xác thực | `develop`, `feature/auth-login` |
 | 2 | **Đặng Minh Tuấn** | Tiếp nhận & Quản lý hồ sơ học sinh, Xếp lớp | `feature/student-management` |
-| 3 | **Nguyễn Hoàng Minh** | Quản lý điểm số môn học & Báo cáo thống kê | `feature/grade-entry` |
+| 3 | **Nguyễn Hoàng Minh** | Cấu hình hệ thống, môi trường & Khởi chạy ứng dụng | `feature/config-setup` |
 
 ## 3. Công nghệ sử dụng
 - **Frontend**: HTML5, CSS3, JavaScript, React
@@ -55,8 +55,7 @@ High-School-Student-Management-System/
         │   └── api.js
         └── pages/
             ├── Login.jsx
-            ├── StudentManagement.jsx
-            └── GradeEntry.jsx
+            └── StudentManagement.jsx
 ```
 
 ## 5. Quy trình làm việc với Git Flow
@@ -77,13 +76,13 @@ gitGraph
    checkout feature/student-management
    commit id: "Hồ sơ học sinh"
    checkout develop
-   branch feature/grade-entry
-   checkout feature/grade-entry
-   commit id: "Nhập điểm môn học"
+   branch feature/config-setup
+   checkout feature/config-setup
+   commit id: "Cấu hình hệ thống"
    checkout develop
    merge feature/auth-login id: "PR #1 Merge"
    merge feature/student-management id: "PR #2 Merge"
-   merge feature/grade-entry id: "PR #3 Merge"
+   merge feature/config-setup id: "PR #3 Merge"
    checkout main
    merge develop id: "Release v1.0"
 ```
@@ -116,23 +115,3 @@ gitGraph
 6. Thành viên khác tiến hành **Code Review**, để lại nhận xét và phê duyệt (Approve).
 7. Hợp nhất (**Merge**) Pull Request vào `develop`.
 
----
-
-## 6. Hướng dẫn cài đặt và khởi chạy
-
-### 6.1. Sao chép kho mã nguồn
-```bash
-git clone https://github.com/tranngocminhsang232/High-School-Student-Management-System.git
-cd High-School-Student-Management-System
-```
-
-### 6.2. Khởi chạy
-```bash
-# Backend
-cd backend
-# Cấu hình application.properties và chạy ứng dụng
-
-# Frontend
-cd frontend
-# Cài đặt và khởi chạy giao diện
-```
