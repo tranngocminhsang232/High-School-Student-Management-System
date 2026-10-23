@@ -115,3 +115,24 @@ gitGraph
 5. Mở **Pull Request (PR)** từ `feature/<ten-tinh-nang>` vào nhánh `develop` trên GitHub.
 6. Thành viên khác tiến hành **Code Review**, để lại nhận xét và phê duyệt (Approve).
 7. Hợp nhất (**Merge**) Pull Request vào `develop`.
+
+---
+
+## 6. Hướng dẫn cài đặt và khởi chạy
+
+### 6.1. Sao chép kho mã nguồn
+```bash
+git clone https://github.com/tranngocminhsang232/High-School-Student-Management-System.git
+cd High-School-Student-Management-System
+```
+
+### 6.2. Khởi chạy
+```bash
+# Backend
+cd backend
+# Cấu hình application.properties và chạy ứng dụng
+
+# Frontend
+cd frontend
+# Cài đặt và khởi chạy giao diện
+```
