@@ -69,6 +69,10 @@ gitGraph
    branch develop
    checkout develop
    commit id: "Cấu trúc khung"
+   branch feature/auth-login
+   checkout feature/auth-login
+   commit id: "Xác thực & Đăng nhập"
+   checkout develop
    branch feature/student-management
    checkout feature/student-management
    commit id: "Hồ sơ học sinh"
@@ -77,8 +81,9 @@ gitGraph
    checkout feature/grade-entry
    commit id: "Nhập điểm môn học"
    checkout develop
-   merge feature/student-management id: "PR #1 Merge"
-   merge feature/grade-entry id: "PR #2 Merge"
+   merge feature/auth-login id: "PR #1 Merge"
+   merge feature/student-management id: "PR #2 Merge"
+   merge feature/grade-entry id: "PR #3 Merge"
    checkout main
    merge develop id: "Release v1.0"
 ```
