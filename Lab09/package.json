@@ -1,0 +1,28 @@
+{
+  "name": "lab09-unittesting",
+  "version": "1.0.0",
+  "description": "Lab 09 - Software Testing Fundamentals & Unit Testing",
+  "main": "tuition.js",
+  "scripts": {
+    "test": "jest",
+    "test:coverage": "jest --coverage"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "tuition.js",
+      "enrollment.js",
+      "payment.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "statements": 70,
+        "branches": 60,
+        "functions": 70,
+        "lines": 70
+      }
+    }
+  }
+}
